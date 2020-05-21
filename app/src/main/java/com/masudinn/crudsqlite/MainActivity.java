@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         btnList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(MainActivity.this,ListActivity.class));
             }
         });
 
@@ -73,9 +73,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 try{
                  msqlitehelper.insertData(
-                         edtName.getText().toString(),
-                         edtNim.getText().toString(),
-                         edtNim.getText().toString(),
+                         edtName.getText().toString().trim(),
+                         edtNim.getText().toString().trim(),
+                         edtNim.getText().toString().trim(),
                          imgViewToByte(imgView)
                  );
                     Toast.makeText(MainActivity.this, "success", Toast.LENGTH_SHORT).show();
