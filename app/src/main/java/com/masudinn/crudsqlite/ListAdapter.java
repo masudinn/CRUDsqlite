@@ -48,6 +48,7 @@ public class ListAdapter extends BaseAdapter {
         View item = view;
         ViewHolder holder = new ViewHolder();
 
+            //put from the item_List to activity_list
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             item = inflater.inflate(R.layout.item_list, null);
             holder.tvName = item.findViewById(R.id.tvnama);
@@ -56,7 +57,7 @@ public class ListAdapter extends BaseAdapter {
             holder.imageView = item.findViewById(R.id.imageView);
             item.setTag(holder);
 
-
+        //Show list activity
         Model model = listItem.get(i);
         holder.tvName.setText(model.getNama());
         holder.tvNim.setText(model.getNim());

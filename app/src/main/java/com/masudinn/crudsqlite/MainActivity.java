@@ -2,6 +2,7 @@ package com.masudinn.crudsqlite;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -35,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("New Record");
 
         edtName = findViewById(R.id.nama);
         edtAlamat = findViewById(R.id.alamat);
@@ -90,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private static byte[] imgViewToByte(ImageView imgView) {
+    public static byte[] imgViewToByte(ImageView imgView) {
         Bitmap bitmap = ((BitmapDrawable)imgView.getDrawable()).getBitmap();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
